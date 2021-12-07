@@ -7,6 +7,7 @@ export const typeDefs = gql`
 type Query {
     hello: String!
     cats: [Cat!]!
+    messages: [NewMessage!]!
 }
 
 type Cat {
@@ -16,6 +17,18 @@ type Cat {
 
 type Mutation {
     createCat(name: String): Cat
+}
+
+type NewMessage {
+    id : ID!
+    noms: String!
+    email: String!
+    title: String!
+    message: String!
+}
+
+type Mutation {
+    NewMessage(noms: String, email: String, title: String, message: String) : NewMessage
 }
 
 `
