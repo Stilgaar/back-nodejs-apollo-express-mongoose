@@ -20,7 +20,6 @@ export const resolvers = {
 
     Mutation: {
         NewMessage : async(_, {noms, email, title, message}) => {
-            console.log('POOUET POUEET')
             const newmessage = await NewMessage({noms, email, title, message});
             await newmessage.save();
             return newmessage;
